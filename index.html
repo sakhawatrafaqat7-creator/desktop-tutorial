@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Resource Hub</title>
+
+<link rel="icon" href="./assets/favicon.ico">
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body id="body" class="bg-gray-100 text-gray-800 transition-all duration-300">
+
+<!-- NAVBAR -->
+<nav class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-4 flex justify-between items-center">
+<h1 class="text-xl font-bold">Student Resource Hub</h1>
+
+<div class="space-x-4 flex items-center">
+
+<a href="index.html" class="hover:underline">Home</a>
+<a href="./src/pages/about/about.html" class="hover:underline">About</a>
+<a href="./src/pages/contact/contact.html" class="hover:underline">Contact</a>
+
+<!-- ✅ ADDED LINKS -->
+<a href="./src/pages/Account/SignUp.html" class="hover:underline">Sign Up</a>
+<a href="./src/pages/Account/signIn.html" class="hover:underline">Sign In</a>
+
+<button id="themeBtn" class="bg-black px-3 py-1 rounded hover:bg-gray-700">
+🌙
+</button>
+
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="text-center p-10">
+<h1 class="text-4xl font-bold mb-2">Student Resource Hub</h1>
+<p class="text-lg text-gray-500">Manage your learning resources efficiently</p>
+</section>
+
+<!-- FORM -->
+<section class="p-6">
+<form id="resourceForm" class="flex flex-wrap gap-4 justify-center">
+<input id="title" placeholder="Title" class="p-2 border rounded w-48">
+<input id="category" placeholder="Category" class="p-2 border rounded w-48">
+<input id="level" placeholder="Level" class="p-2 border rounded w-48">
+
+<button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+Add Resource
+</button>
+</form>
+</section>
+
+<!-- SEARCH FILTER -->
+<section class="text-center p-4 space-x-3">
+<input id="searchInput" placeholder="Search..." class="p-2 border rounded">
+
+<select id="filterCategory" class="p-2 border rounded">
+<option value="">All</option>
+<option value="Programming">Programming</option>
+<option value="Study">Study</option>
+</select>
+
+<button id="sortBtn" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">
+Sort
+</button>
+</section>
+
+<!-- CARDS -->
+<section id="cardContainer" class="p-10 grid grid-cols-1 md:grid-cols-3 gap-6"></section>
+
+<!-- EDIT MODAL -->
+<div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+<div class="bg-white p-6 rounded shadow w-80">
+<h2 class="text-xl font-bold mb-4">Edit Resource</h2>
+
+<input id="editTitle" class="p-2 border w-full mb-2">
+<input id="editCategory" class="p-2 border w-full mb-2">
+<input id="editLevel" class="p-2 border w-full mb-4">
+
+<button id="updateBtn" class="bg-green-600 text-white px-4 py-2 rounded">Update</button>
+<button onclick="closeModal()" class="ml-2 bg-red-500 text-white px-4 py-2 rounded">Cancel</button>
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white text-center p-4">
+<p>© 2026 Student Resource Hub</p>
+</footer>
+
+<script type="module" src="./src/scripts/main.js"></script>
+</body>
+</html>
